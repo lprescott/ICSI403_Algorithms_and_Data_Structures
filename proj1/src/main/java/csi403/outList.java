@@ -23,13 +23,12 @@
 package csi403;
 
 import java.io.Serializable;
-import java.util.concurrent.TimeUnit;
 
 public class outList implements Serializable{
 	//Properties
 	private int [] outList;
 	private String algorithm;
-	private int timeMS;
+	private long timeMS;
 	
 	//Getter(s) and Setter(s)
 	public String getAlgorithm() {
@@ -38,10 +37,10 @@ public class outList implements Serializable{
 	public void setAlgorithm(String algorithm) {
 		this.algorithm = algorithm;
 	}
-	public int getTimeMS() {
+	public long getTimeMS() {
 		return timeMS;
 	}
-	public void setTimeMS(int timeMS) {
+	public void setTimeMS(long timeMS) {
 		this.timeMS = timeMS;
 	}
 	public int [] getOutList() {
@@ -53,19 +52,25 @@ public class outList implements Serializable{
 	
 	//Constructor(s)
 	public outList (inList list) {
+		//Attributes
+		long startTime, endTime, elapsedTime;
+		
 		//Hard-code algorithm name, "algorithm"
+		this.algorithm = "insertion sort";
 		
-		//Start timer and then call insertionSort
+		//Start timer and then call insertionSort, assign the newly sorted list to outList
+		startTime = System.currentTimeMillis();
+		this.outList = sort(list.getInList());
 		
-		//End timer and then assign "timeMS" with result 
-		//Also assign newly sorted list, "outList"
+		//End timer, calculate elapsed time, and then assign "timeMS" with elapsed 
+		endTime = System.currentTimeMillis();
+	    elapsedTime = endTime - startTime;
+	    this.timeMS = elapsedTime;
 	}
 	
 	public outList() {
 		//Assign nothing
-	}
-	
-	//End constructor(s)
+	}//End constructor(s)
 	
 	//This function sorts and inputed integer array by insertion sort.
 	public static int[] sort(int inList[]){
