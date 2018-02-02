@@ -102,7 +102,7 @@ public class outList implements Serializable{
 	     
 	     //Create and print a list for testing.
 	     System.out.print("The unsorted list:\n");
-	     int testList[] = {13, 2, 1, -5, 6};
+	     int testList[] = {13, 2, 1, -5, 6, 4, 15};
 	     printList(testList);
 	     
 	     //Start the timer.
