@@ -63,6 +63,14 @@ public class JsonSerializer {
         System.out.println(serializer.serialize(goodStudent)); 
         
         System.out.println("************************************");
+        
+        outList testList = new outList();
+        testList.setAlgorithm("quicksort");
+        testList.setTimeMS(52);
+        int testArray[] = { 1,2,3,4,5 }; 
+        testList.setOutList(testArray);
+        System.out.println(serializer.serialize(testList));
+
     }
     
 }

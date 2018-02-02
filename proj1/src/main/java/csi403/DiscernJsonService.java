@@ -49,6 +49,8 @@ public class DiscernJsonService extends HttpServlet {
         // Create Json reader object and discern the class from the JSON message 
         String className = new JsonClassDiscerner().discern(jsonStr); 
         
+        
+        
         // Set response content type to be JSON
         response.setContentType("application/json");
         // Send back the name of the class as a JSON message

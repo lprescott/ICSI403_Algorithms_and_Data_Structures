@@ -32,7 +32,13 @@ public class JsonClassDiscerner {
         catch (Exception e) {
             // e.printStackTrace(); 
         }
-        
+        try {
+            inList list = mapper.readValue(jsonStr, inList.class);
+            return "inList"; 
+        }
+        catch (Exception e) {
+            // e.printStackTrace(); 
+        }
         return "<unknown>"; 
     }
 
@@ -71,6 +77,12 @@ public class JsonClassDiscerner {
         msg = "{ \"name\" : \"Fido\", \"species\" : \"Dog\", " +
             "\"person\" : " + "{ \"lastName\" : \"Smith\", \"firstName\" : \"Mary\" }" + " }";
         System.out.println(msg); 
+        System.out.println(discerner.discern(msg));
+
+        System.out.println("************************************");
+        
+        msg = "{ \"inList\" : [1,2,3,4,5]}";
+        System.out.println(msg);
         System.out.println(discerner.discern(msg));
 
         System.out.println("************************************");
