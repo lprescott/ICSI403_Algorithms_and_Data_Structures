@@ -2,7 +2,7 @@
 //  The supplied discerner class, to detect the object type of received JSON.
 // 
 //  Edits have been made to the main method for testing purposes.
-//  Edits have also been in the discern function, checking for bad-input.
+//  Edits have also been in the discern function, implementing inList.
 //*******************************************************************
 
 package csi403; 
@@ -27,14 +27,7 @@ public class JsonClassDiscerner {
         // mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         try {
             inList list = mapper.readValue(jsonStr, inList.class);
-           
-            //Check if the inList is empty
-            if (list.getInList().length == 0) {
-            	return "empty inList";
-            }
-            else {
-                return "inList"; 
-            }
+            return "inList"; 
         }
         catch (Exception e) {
             // e.printStackTrace(); 

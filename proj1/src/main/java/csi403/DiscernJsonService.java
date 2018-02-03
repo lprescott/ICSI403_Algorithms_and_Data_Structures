@@ -72,15 +72,29 @@ public class DiscernJsonService extends HttpServlet {
 
             //Read in the inList and then construct the outList
             inList inList = mapper.readValue(jsonStr, inList.class);
+            
+            //Error checking (bad input)
+            if (inList.getInList().length == 0) {
+                // e.printStackTrace(); 
+                out.println("{\"message\" : \"Empty inList\"}");
+                return;
+            }
+            
+            int x; //Check for non-integers
+            for (x=0; x<inList.getInList().length; x++) {
+            	if((double) inList.getInList()[x] % 1.0 != 0) {
+                    // e.printStackTrace(); 
+                    out.println("{\"message\" : \"non-integer inList\"}");
+                    return;
+            	}
+            } //End error checking
+
+            //Construct
             outList outList = new outList(inList);
 
             //Serialize the outList and output
             out.println(serializer.serialize(outList));
         } 
-        else if(className.equals("empty inList")) {
-            // e.printStackTrace(); 
-            out.println("{\"message\" : \"Empty inList\"}");
-        }
         //Else return an error
         else {
             // e.printStackTrace(); 
@@ -88,4 +102,3 @@ public class DiscernJsonService extends HttpServlet {
         }
     }
 }
-
