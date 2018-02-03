@@ -23,7 +23,7 @@
 //Package:
 package csi403;
 
-//Libraries
+//Libraries:
 import java.io.Serializable;
 
 public class outList implements Serializable{
@@ -74,18 +74,18 @@ public class outList implements Serializable{
 		//Assign nothing
 	}//End constructor(s)
 	
-	//This function sorts and inputed integer array by insertion sort.
+	//This function sorts an inputed integer array by insertion, returning the sorted list.
 	public static int[] sort(int inList[]){
 		int temp; 
 		//Traverse the inList.
-		for (int i = 1; i < inList.length; i++) { 
+		for (int x = 1; x < inList.length; x++) { 
 			//Traverse the sorted part of the list (to the right).
-			for(int j = i ; j > 0 ; j--){
+			for(int z = x ; z > 0 ; z--){
 				//If the value at pos. j < j - 1, swap them
-				if(inList[j] < inList[j-1]){
-					temp = inList[j];
-					inList[j] = inList[j-1];
-					inList[j-1] = temp;
+				if(inList[z] < inList[z-1]){
+					temp = inList[z];
+					inList[z] = inList[z-1];
+					inList[z-1] = temp;
 				}
 			}
 		}
@@ -104,7 +104,12 @@ public class outList implements Serializable{
 	     
 		//Create and print a list for testing.
 		System.out.print("The unsorted list:\n");
-		int testList[] = {13, 2, 1, -5, 6, 4, 15};
+		int testList[] = { 18, -21, -95, -13, -87, 17, -6, 24, -10, -37, -74, 
+			-50, -41, -90, -83, 80, 78, 19, -28, 39, -47, 33, 5, 20, 44, -98, 
+			96, 61, 73, 69, 76, 47, 2, -91, -56, 30, 65, -62, -53, 58, -46
+		};
+		
+		//call on testList
 		printList(testList);
 		
 		//Start the timer.
@@ -118,13 +123,13 @@ public class outList implements Serializable{
 		System.out.println("Done...\n");
 		long endTime = System.nanoTime();
 
-		//Calculate the time elapsed.
+		//Calculate and print the elapsed nanoseconds and milliseconds.
 		long elapsedTime = endTime - startTime;
-		double milliseconds = (elapsedTime/1000000);
+	    long milliseconds = elapsedTime / 1000000;
+		System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", in milliseconds ("+elapsedTime+"/1000000): " + milliseconds);
 		
-		//Print time elapsed and sorted list.
-		System.out.println("Elapsed time in milliseconds: " + milliseconds);
-		System.out.print("The sorted list:\n");
+		//Print the sorted list
+		System.out.print("\nThe sorted list:\n");
 		printList(testList);
 	}
 }
