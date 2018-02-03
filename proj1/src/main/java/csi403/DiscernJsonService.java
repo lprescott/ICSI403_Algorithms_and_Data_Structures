@@ -56,7 +56,13 @@ public class DiscernJsonService extends HttpServlet {
         // Create Json reader object and discern the class from the JSON message 
         String className = new JsonClassDiscerner().discern(jsonStr); 
         
-        //If the inputted JSON creates a valid inList.
+        // Set response content type to be JSON
+        response.setContentType("application/json");
+        
+        // Send back the name of the class as a JSON message
+        PrintWriter out = response.getWriter();
+        
+        //If the inputed JSON creates a valid inList.
         if(className.equals("inList")) {
         	//Create and objectmapper and serializer needed for inputting inList, and outputting outList
             ObjectMapper mapper = new ObjectMapper();
@@ -65,24 +71,17 @@ public class DiscernJsonService extends HttpServlet {
             //Read in the inList and then construct the outList
             inList inList = mapper.readValue(jsonStr, inList.class);
             outList outList = new outList(inList);
-            
-            // Set response content type to be JSON
-            response.setContentType("application/json");
 
-            // Send back the name of the class as a JSON message
-            PrintWriter out = response.getWriter();
-            
             //Serialize the outList and output
             out.println(serializer.serialize(outList));
+        } 
+        else if(className.equals("empty inList")) {
+            // e.printStackTrace(); 
+            out.println("{\"message\" : \"Empty inList\"}");
         }
         //Else return an error
         else {
             // e.printStackTrace(); 
-            // Set response content type to be JSON
-            response.setContentType("application/json");
-
-            // Send back the name of the class as a JSON message
-            PrintWriter out = response.getWriter();
             out.println("{\"message\" : \"Malformed JSON\"}"); 
         }
    

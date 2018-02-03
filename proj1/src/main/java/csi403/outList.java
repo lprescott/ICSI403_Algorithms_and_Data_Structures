@@ -55,19 +55,21 @@ public class outList implements Serializable{
 	//Constructor(s):
 	public outList (inList list) {
 		//Attributes
-		long startTime, endTime, elapsedTime;
+		long startTime, endTime, elapsedTime, milliseconds;
 		
 		//Hard-code algorithm name, "algorithm"
 		this.algorithm = "insertion sort";
 		
 		//Start timer and then call insertionSort, assign the newly sorted list to outList
-		startTime = System.currentTimeMillis();
+		startTime = System.nanoTime();
 		this.outList = sort(list.getInList());
 		
-		//End timer, calculate elapsed time, and then assign "timeMS" with elapsed 
-		endTime = System.currentTimeMillis();
-	    elapsedTime = endTime - startTime;
-	    this.timeMS = elapsedTime;
+		//End timer, calculate elapsed time (in MS), and then assign "timeMS" with elapsed 
+		endTime = System.nanoTime();
+		elapsedTime = endTime - startTime;
+	    milliseconds = elapsedTime / 1000000;
+	    
+	    this.timeMS = milliseconds;
 	}
 	
 	public outList() {
