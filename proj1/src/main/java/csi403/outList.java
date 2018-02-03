@@ -27,6 +27,9 @@ package csi403;
 import java.io.Serializable;
 
 public class outList implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	//Properties
 	private int [] outList;
 	private String algorithm;

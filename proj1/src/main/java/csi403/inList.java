@@ -44,5 +44,5 @@ public class inList {
 	
 	public inList() {
 		//Assign nothing
-	} //End construtor(s)
+	} //End constructor(s)
 }

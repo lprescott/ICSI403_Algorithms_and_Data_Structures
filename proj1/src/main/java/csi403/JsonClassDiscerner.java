@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.Serializable;
 import java.util.List; 
 
+@SuppressWarnings("unused")
 public class JsonClassDiscerner {
 
     public JsonClassDiscerner() {
@@ -26,7 +27,7 @@ public class JsonClassDiscerner {
         // mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         try {
             inList list = mapper.readValue(jsonStr, inList.class);
-            
+           
             //Check if the inList is empty
             if (list.getInList().length == 0) {
             	return "empty inList";
@@ -37,18 +38,17 @@ public class JsonClassDiscerner {
         }
         catch (Exception e) {
             // e.printStackTrace(); 
+            return "<unknown>"; 
         }
-        return "<unknown>"; 
     }
-
 
     // test app 
     public static void main(String[] args) {
-        String msg, msg2;
+        String msg, msg2, msg3;
         JsonClassDiscerner discerner = new JsonClassDiscerner();
         System.out.println("************************************"); 
         
-        msg = "{ \"inList\" : [1,-4,2,8,5]}";
+        msg = "{\"inList\" : [1,-4,2,8,5]}";
         System.out.println(msg);
         System.out.println(discerner.discern(msg));
 
@@ -58,6 +58,12 @@ public class JsonClassDiscerner {
         System.out.println(msg2);
         System.out.println(discerner.discern(msg2));
 
-        System.out.println("************************************");
+        System.out.println("************************************"); 
+
+        msg3 = "{\"inList\" : [52.1]}";
+        System.out.println(msg3);
+        System.out.println(discerner.discern(msg3));
+
+        System.out.println("************************************"); 
     }
 }

@@ -1,7 +1,7 @@
 //*******************************************************************
 //  The supplied httpservlet class, to enact algorithms on supplied POST requests.
 // 
-//  Edits have only been made to the "main worker method", which is called on doPost.
+//  Edits have only been made to the "main worker method" doService, which is called in doPost.
 //*******************************************************************
 
 package csi403;
@@ -17,7 +17,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 // Extend HttpServlet class
 public class DiscernJsonService extends HttpServlet {
 
-  // Standard servlet method 
+	private static final long serialVersionUID = 1L;
+
+	// Standard servlet method 
     public void init() throws ServletException { 
         // Do any required initialization here - likely none
     }
@@ -28,7 +30,7 @@ public class DiscernJsonService extends HttpServlet {
         doService(request, response); 
     }
 
-    // Standard Servlet method
+    // Standard servlet method
     public void destroy() { 
         // Do any required tear-down here, likely nothing.
     }
@@ -84,9 +86,6 @@ public class DiscernJsonService extends HttpServlet {
             // e.printStackTrace(); 
             out.println("{\"message\" : \"Malformed JSON\"}"); 
         }
-   
     }
-    
-    
 }
 

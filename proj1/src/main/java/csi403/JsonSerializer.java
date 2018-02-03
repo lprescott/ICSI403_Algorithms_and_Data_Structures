@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Vector;
 import java.util.List; 
 
+@SuppressWarnings("unused")
 public class JsonSerializer {
 
     public JsonSerializer() {
@@ -47,8 +48,6 @@ public class JsonSerializer {
         System.out.println(serializer.serialize(testList));
         
         System.out.println("************************************");
-
     }
-    
 }
 
