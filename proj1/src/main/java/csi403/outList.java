@@ -23,6 +23,7 @@
 package csi403;
 
 import java.io.Serializable;
+import java.lang.Math;
 
 public class outList implements Serializable{
 	//Properties
@@ -107,20 +108,23 @@ public class outList implements Serializable{
 	     
 	     //Start the timer.
 	     System.out.println("\n\nStarting timer and insertionSort...");
-	     long startTime = System.currentTimeMillis();
+	     long startTime = System.nanoTime();
 	     
 	     //Call insertionSort.
 	     testList = sort(testList);
 	     
 	     //End the timer.
 	     System.out.println("Done...\n");
-	     long endTime = System.currentTimeMillis();
+	     long endTime = System.nanoTime();
 
 	     //Calculate the time elapsed.
 	     long elapsedTime = endTime - startTime;
 	     
+	     double milliseconds = (elapsedTime/1000000);
+	     
 	     //Print time elapsed and sorted list.
-	     System.out.println("Elapsed time in milliseconds: " + elapsedTime);
+	     System.out.println("Elapsed time in milliseconds: " + milliseconds);
+	     
 	     System.out.print("The sorted list:\n");
 	     printList(testList);
 	 }
