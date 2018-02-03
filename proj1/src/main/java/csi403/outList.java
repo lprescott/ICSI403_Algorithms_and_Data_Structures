@@ -1,7 +1,7 @@
 //*******************************************************************
 //@author: Luke R. Prescott
 //
-//@file: outList.java ~ The sorted (using insertionSort) outList object that will be returned.
+//@file: outList.java ~ The sorted (using insertionSort method) outList object that will be returned.
 //
 //CSI 403 – Spring 2018 – Project #1 – Sorting 
 //
@@ -20,10 +20,11 @@
 //
 //*******************************************************************
 
+//Package:
 package csi403;
 
+//Libraries
 import java.io.Serializable;
-import java.lang.Math;
 
 public class outList implements Serializable{
 	//Properties
@@ -51,7 +52,7 @@ public class outList implements Serializable{
 		this.outList = outList;
 	}
 	
-	//Constructor(s)
+	//Constructor(s):
 	public outList (inList list) {
 		//Attributes
 		long startTime, endTime, elapsedTime;
@@ -75,57 +76,55 @@ public class outList implements Serializable{
 	
 	//This function sorts and inputed integer array by insertion sort.
 	public static int[] sort(int inList[]){
-	  int temp; 
-	  //Traverse the inList.
-	  for (int i = 1; i < inList.length; i++) { 
-	      //Traverse the sorted part of the list (to the right).
-	      for(int j = i ; j > 0 ; j--){
-	          //If the value at pos. j < j - 1, swap them
-	          if(inList[j] < inList[j-1]){
-	                 temp = inList[j];
-	                 inList[j] = inList[j-1];
-	                 inList[j-1] = temp;
-	             }
-	         }
-	     }
-	     return inList;
+		int temp; 
+		//Traverse the inList.
+		for (int i = 1; i < inList.length; i++) { 
+			//Traverse the sorted part of the list (to the right).
+			for(int j = i ; j > 0 ; j--){
+				//If the value at pos. j < j - 1, swap them
+				if(inList[j] < inList[j-1]){
+					temp = inList[j];
+					inList[j] = inList[j-1];
+					inList[j-1] = temp;
+				}
+			}
+		}
+		return inList;
 	}
 
-	 //This function prints the inputed list on one line for testing.
-	 public static void printList(int list[]){
-	     for (int x = 0; x < list.length; x++){
-	         System.out.print(list[x] + " "); 
-	     }
-	 }
+	//This function prints the inputed list on one line for testing.
+	public static void printList(int list[]){
+		for (int x = 0; x < list.length; x++){
+			System.out.print(list[x] + " "); 
+		}
+	}
 
-	 //The main method to call insertionSort, and printList methods.
-	 public static void main(String args []){
+	//The main method to call insertionSort, and printList methods.
+	public static void main(String args []){
 	     
-	     //Create and print a list for testing.
-	     System.out.print("The unsorted list:\n");
-	     int testList[] = {13, 2, 1, -5, 6, 4, 15};
-	     printList(testList);
-	     
-	     //Start the timer.
-	     System.out.println("\n\nStarting timer and insertionSort...");
-	     long startTime = System.nanoTime();
-	     
-	     //Call insertionSort.
-	     testList = sort(testList);
-	     
-	     //End the timer.
-	     System.out.println("Done...\n");
-	     long endTime = System.nanoTime();
+		//Create and print a list for testing.
+		System.out.print("The unsorted list:\n");
+		int testList[] = {13, 2, 1, -5, 6, 4, 15};
+		printList(testList);
+		
+		//Start the timer.
+		System.out.println("\n\nStarting timer and insertionSort...");
+		long startTime = System.nanoTime();
+		
+		//Call insertionSort.
+		testList = sort(testList);
+		
+		//End the timer.
+		System.out.println("Done...\n");
+		long endTime = System.nanoTime();
 
-	     //Calculate the time elapsed.
-	     long elapsedTime = endTime - startTime;
-	     
-	     double milliseconds = (elapsedTime/1000000);
-	     
-	     //Print time elapsed and sorted list.
-	     System.out.println("Elapsed time in milliseconds: " + milliseconds);
-	     
-	     System.out.print("The sorted list:\n");
-	     printList(testList);
-	 }
+		//Calculate the time elapsed.
+		long elapsedTime = endTime - startTime;
+		double milliseconds = (elapsedTime/1000000);
+		
+		//Print time elapsed and sorted list.
+		System.out.println("Elapsed time in milliseconds: " + milliseconds);
+		System.out.print("The sorted list:\n");
+		printList(testList);
+	}
 }

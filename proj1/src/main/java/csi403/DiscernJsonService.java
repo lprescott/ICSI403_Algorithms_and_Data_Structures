@@ -1,5 +1,10 @@
-package csi403;
+//*******************************************************************
+//  The supplied httpservlet class, to enact algorithms on supplied POST requests.
+// 
+//  Edits have only been made to the "main worker method", which is called on doPost.
+//*******************************************************************
 
+package csi403;
 
 // Import required java libraries
 import java.io.*;
@@ -51,6 +56,7 @@ public class DiscernJsonService extends HttpServlet {
         // Create Json reader object and discern the class from the JSON message 
         String className = new JsonClassDiscerner().discern(jsonStr); 
         
+        //If the inputted JSON creates a valid inList.
         if(className.equals("inList")) {
         	//Create and objectmapper and serializer needed for inputting inList, and outputting outList
             ObjectMapper mapper = new ObjectMapper();
@@ -62,16 +68,19 @@ public class DiscernJsonService extends HttpServlet {
             
             // Set response content type to be JSON
             response.setContentType("application/json");
+
             // Send back the name of the class as a JSON message
             PrintWriter out = response.getWriter();
             
             //Serialize the outList and output
             out.println(serializer.serialize(outList));
         }
+        //Else return an error
         else {
             // e.printStackTrace(); 
             // Set response content type to be JSON
             response.setContentType("application/json");
+
             // Send back the name of the class as a JSON message
             PrintWriter out = response.getWriter();
             out.println("{\"message\" : \"Malformed JSON\"}"); 

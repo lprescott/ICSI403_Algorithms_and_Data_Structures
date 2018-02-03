@@ -20,7 +20,10 @@
 //
 //*******************************************************************
 
+//Package:
 package csi403;
+
+//Libraries:
 
 public class inList {
 	//Properties
@@ -34,12 +37,12 @@ public class inList {
 		this.inList = inList;
 	}
 	
-	//Constructor(s)
+	//Constructor(s):
 	public inList (int [] list) {
 		this.inList = list;
 	}//End constructor(s)
 	
 	public inList() {
 		//Assign nothing
-	}
+	} //End construtor(s)
 }

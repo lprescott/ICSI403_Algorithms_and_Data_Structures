@@ -1,3 +1,9 @@
+//*******************************************************************
+//  The supplied discerner class, to detect the object chat of received JSON.
+// 
+//  Edits have only been made to the main method for testing purposes.
+//*******************************************************************
+
 package csi403; 
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
