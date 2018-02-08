@@ -65,13 +65,12 @@ public class outList implements Serializable{
 		
 		//Start timer and then call insertionSort, assign the newly sorted list to outList
 		startTime = System.nanoTime();
-		this.outList = sort(list.getInList());
+		this.outList = insertionSort(list.getInList());
 		
 		//End timer, calculate elapsed time (in MS), and then assign "timeMS" with elapsed 
 		endTime = System.nanoTime();
 		elapsedTime = endTime - startTime;
-	    milliseconds = elapsedTime / 1000000;
-	    
+	    milliseconds = elapsedTime / 1000000; // nano/1,000,000 = milli
 	    this.timeMS = milliseconds;
 	}
 	
@@ -80,21 +79,27 @@ public class outList implements Serializable{
 	}//End constructor(s)
 	
 	//This function sorts an inputed integer array by insertion, returning the sorted list.
-	public static int[] sort(int inList[]){
-		int temp; 
-		//Traverse the inList.
-		for (int x = 1; x < inList.length; x++) { 
-			//Traverse the sorted part of the list (to the right).
-			for(int z = x ; z > 0 ; z--){
-				//If the value at pos. j < j - 1, swap them
-				if(inList[z] < inList[z-1]){
-					temp = inList[z];
-					inList[z] = inList[z-1];
-					inList[z-1] = temp;
-				}
-			}
-		}
-		return inList;
+	public static int[] insertionSort(int inList[]){
+		//For the length the the supplied array
+        for (int j = 0; j < inList.length; j++) {
+        	
+        	//Assign the current value to the key, and the previous value to i
+            int key = inList[j];
+            int i = j-1;
+            
+            //While i is zero or greater, and i is greater than the key
+            while ((i > -1) && (inList[i] > key)) {
+            	//Assign inList at i+1 to inList at i
+            	inList [i+1] = inList[i];
+                i--;
+            }
+            
+            //Assign inList at i+1 to key
+            inList[i+1] = key;
+        }
+        
+        //Return sorted inList
+        return inList;
 	}
 
 	//This function prints the inputed list on one line for testing.
@@ -122,8 +127,8 @@ public class outList implements Serializable{
 		long startTime = System.nanoTime();
 		
 		//Call insertionSort.
-		testList = sort(testList);
-		
+		testList = insertionSort(testList);
+
 		//End the timer.
 		System.out.println("Done...\n");
 		long endTime = System.nanoTime();

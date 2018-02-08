@@ -5,18 +5,18 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>DiscernJsonService</display-name>
+    <display-name>SortingIntegers</display-name>
     <description>
-        A simple service to show parsing of JSON. 
+        A simple service to parse a JSON inList, sort it, then return it as a JSON outList. 
     </description>
 
     <servlet>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <servlet-class>csi403.DiscernJsonService</servlet-class>
+        <servlet-name>SortingIntegers</servlet-name>
+        <servlet-class>csi403.SortingIntegers</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <url-pattern>/DiscernJsonService</url-pattern>
+        <servlet-name>SortingIntegers</servlet-name>
+        <url-pattern>/SortingIntegers</url-pattern>
     </servlet-mapping>
 
 </web-app>     

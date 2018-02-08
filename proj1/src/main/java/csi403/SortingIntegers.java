@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 // Extend HttpServlet class
-public class DiscernJsonService extends HttpServlet {
+public class SortingIntegers extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -78,16 +78,7 @@ public class DiscernJsonService extends HttpServlet {
                 // e.printStackTrace(); 
                 out.println("{\"message\" : \"Empty inList\"}");
                 return;
-            }
-            
-            int x; //Check for non-integers
-            for (x=0; x<inList.getInList().length; x++) {
-            	if((double) inList.getInList()[x] % 1.0 != 0) {
-                    // e.printStackTrace(); 
-                    out.println("{\"message\" : \"non-integer inList\"}");
-                    return;
-            	}
-            } //End error checking
+            }//End error checking
 
             //Construct
             outList outList = new outList(inList);

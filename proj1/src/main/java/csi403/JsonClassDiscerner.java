@@ -12,9 +12,10 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.Serializable;
-import java.util.List; 
 
 @SuppressWarnings("unused")
 public class JsonClassDiscerner {
@@ -25,8 +26,9 @@ public class JsonClassDiscerner {
     public String discern(String jsonStr) {
         ObjectMapper mapper = new ObjectMapper();
         // mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+
         try {
-            inList list = mapper.readValue(jsonStr, inList.class);
+            inList list = mapper.readValue(jsonStr, inList.class);          
             return "inList"; 
         }
         catch (Exception e) {
@@ -53,7 +55,7 @@ public class JsonClassDiscerner {
 
         System.out.println("************************************"); 
 
-        msg3 = "{\"inList\" : [52.1]}";
+        msg3 = "{\"inList\" : [52.1, 53.1]}";
         System.out.println(msg3);
         System.out.println(discerner.discern(msg3));
 

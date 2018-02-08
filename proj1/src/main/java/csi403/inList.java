@@ -41,7 +41,7 @@ public class inList {
 	public inList (int [] list) {
 		this.inList = list;
 	}//End constructor(s)
-	
+
 	public inList() {
 		//Assign nothing
 	} //End constructor(s)
