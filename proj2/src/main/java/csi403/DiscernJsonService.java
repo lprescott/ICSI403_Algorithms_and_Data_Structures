@@ -53,7 +53,9 @@ public class DiscernJsonService extends HttpServlet {
         response.setContentType("application/json");
         // Send back the name of the class as a JSON message
         PrintWriter out = response.getWriter();
-        out.println("{ \"class\" : " + "\"" + className + "\"" + "}"); 
+        
+        
+        
     }
     
     

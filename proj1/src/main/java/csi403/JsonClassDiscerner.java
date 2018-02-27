@@ -55,7 +55,7 @@ public class JsonClassDiscerner {
 
         System.out.println("************************************"); 
 
-        msg3 = "{\"inList\" : [52.1, 53.1]}";
+        msg3 = "{\"list\" : [1,2,3,4,5]}";
         System.out.println(msg3);
         System.out.println(discerner.discern(msg3));
 
