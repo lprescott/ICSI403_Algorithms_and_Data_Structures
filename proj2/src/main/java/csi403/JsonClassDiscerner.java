@@ -16,9 +16,14 @@ public class JsonClassDiscerner {
 
     public String discern(String jsonStr) {
         ObjectMapper mapper = new ObjectMapper();
-        // mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-
-
+        //mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        try {
+        	inList inList = mapper.readValue(jsonStr, inList.class);        	
+        	return "inList";
+        	
+        } catch(Exception e) {
+            //e.printStackTrace();
+        }
         
         return "<unknown>"; 
     }
@@ -30,7 +35,7 @@ public class JsonClassDiscerner {
         JsonClassDiscerner discerner = new JsonClassDiscerner();
         System.out.println("************************************"); 
         
-        msg = "{}";
+        msg = "{\"inList\":[{\"cmd\":\"enqueue\",\"name\":\"job1\",\"pri\":3}]}";
         System.out.println(msg);
         System.out.println(discerner.discern(msg));
 

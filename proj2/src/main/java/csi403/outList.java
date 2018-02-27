@@ -9,7 +9,14 @@ package csi403;
  */
 public class outList {
 	
-	String [] names;
+	private String [] names;
+
+	/**
+	 * @param names
+	 */
+	public outList(String[] names) {
+		this.names = names;
+	}
 
 	/**
 	 * @return the names
