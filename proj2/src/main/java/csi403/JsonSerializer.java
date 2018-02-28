@@ -1,3 +1,8 @@
+//*******************************************************************
+//  The supplied serializer class, to convert an object into JSON format.
+// 
+//  Edits may have only been made to the main method for testing purposes.
+//*******************************************************************
 
 package csi403;
 
@@ -30,7 +35,7 @@ public class JsonSerializer {
 
     // test app 
     public static void main(String[] args) {
-        
+        //TODO: auto generated stub
     }
     
 }

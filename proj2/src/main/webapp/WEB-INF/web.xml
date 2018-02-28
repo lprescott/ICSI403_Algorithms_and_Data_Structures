@@ -5,18 +5,18 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>DiscernJsonService</display-name>
+    <display-name>PriorityQueue</display-name>
     <description>
-        A simple service to show parsing of JSON. 
+        A service to execute a list of supplied additions and removals to a priority queue.
     </description>
 
     <servlet>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <servlet-class>csi403.DiscernJsonService</servlet-class>
+        <servlet-name>PriorityQueue</servlet-name>
+        <servlet-class>csi403.PriorityQueue</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <url-pattern>/DiscernJsonService</url-pattern>
+        <servlet-name>PriorityQueue</servlet-name>
+        <url-pattern>/PriorityQueue</url-pattern>
     </servlet-mapping>
 
 </web-app>     

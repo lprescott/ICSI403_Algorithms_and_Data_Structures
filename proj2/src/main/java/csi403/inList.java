@@ -1,7 +1,8 @@
 //*******************************************************************
 //@author: Luke R. Prescott
 //
-//@file: inList.java ~ The unsorted inList object that will be supplied.
+//@file: inList.java ~ The unsorted inList object that will be supplied,
+//						which contains command objects.
 //
 //CSI 403 – Spring 2018 – Project #2 – Priority Queue 
 //
@@ -9,7 +10,7 @@
 //	To simulate a task management system with a priority queue.
 //
 //Problem: 
-//	Provide a RESTful service which accepts as a POST of JSON a list of enqueue and dequeue statements onto an in-memory job queue.1  
+//	Provide a RESTful service which accepts as a POST of JSON a list of enqueue and dequeue statements onto an in-memory job queue.
 //	Each job definition contains a name and a priority, with 0 being the best priority and positive integers representing lower priorities.
 //	Return the JSON representing the state of the queue (the list of job names, in priority order), after all enqueue and dequeue statements have been processed.  
 //	
@@ -33,10 +34,7 @@
 //
 //*******************************************************************
 
-//Package:
 package csi403;
-
-//Libraries:
 
 /*
  * The unsorted inList object that will be supplied.
@@ -70,7 +68,13 @@ public class inList {
 		this.inList = inList;
 	}
 	
-	//Command object
+	
+	/*
+	 * The command object contains a cmd String, name String and int priority
+	 * all which are parts of the standard supplied inList data types.
+	 * 
+	 * Three constructors have been created for all use cases.
+	 */
 	public static class command {
 		private String cmd;
 		private String name;
@@ -83,15 +87,15 @@ public class inList {
 		 * @param pri
 		 */
 		public command(String cmd, String name, int pri) {
-			this.cmd = cmd;
-			this.name = name;
+			this.cmd = cmd.toLowerCase();
+			this.name = name.toLowerCase();
 			this.pri = pri;
 		}
 		/**
 		 * @param cmd
 		 */
 		public command(String cmd) {
-			this.cmd = cmd;
+			this.cmd = cmd.toLowerCase();
 		}
 		/**
 		 * 
