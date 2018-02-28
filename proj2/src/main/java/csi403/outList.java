@@ -52,6 +52,7 @@ import csi403.inList.command;
  * 	which contains a arraylist of strings for easy returning 
  * 	after sorting in pri-queue.
  */
+@SuppressWarnings("unused")
 public class outList {
 	
 	ArrayList<String> outList = new ArrayList<String>(7);
@@ -147,7 +148,7 @@ public class outList {
 		 */
 		public job(String name, int pri) {
 
-			this.name = name.toLowerCase();
+			this.name = name;
 			this.pri = pri;
 		}
 		/**

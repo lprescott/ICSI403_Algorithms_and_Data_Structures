@@ -17,7 +17,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 // Extend HttpServlet class
 public class PriorityQueue extends HttpServlet {
 
-  // Standard servlet method 
+	private static final long serialVersionUID = 1L;
+
+	// Standard servlet method 
     public void init() throws ServletException { 
         // Do any required initialization here - likely none
     }

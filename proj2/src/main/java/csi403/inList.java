@@ -87,15 +87,15 @@ public class inList {
 		 * @param pri
 		 */
 		public command(String cmd, String name, int pri) {
-			this.cmd = cmd.toLowerCase();
-			this.name = name.toLowerCase();
+			this.cmd = cmd;
+			this.name = name;
 			this.pri = pri;
 		}
 		/**
 		 * @param cmd
 		 */
 		public command(String cmd) {
-			this.cmd = cmd.toLowerCase();
+			this.cmd = cmd;
 		}
 		/**
 		 * 

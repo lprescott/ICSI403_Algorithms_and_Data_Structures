@@ -36,13 +36,11 @@ public class JsonClassDiscerner {
     public String discern(String jsonStr) {
     	
     	//Some error checking
-    	if(jsonStr.contains("{}") || jsonStr.contains("{ }") || jsonStr.isEmpty()) {
+    	if(jsonStr.contains("{}") || jsonStr.isEmpty()) {
     		return "empty JSON";
     	} else if (jsonStr.contains(".")) {
     		return "non-integer value(s)";
-    	} else if(!jsonStr.contains("inList")) {
-    		return "no inList object";
-    	} 
+    	}
     	
         ObjectMapper mapper = new ObjectMapper();
         //mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
@@ -95,7 +93,7 @@ public class JsonClassDiscerner {
         System.out.println(msg);
         testingFunction(discerner.discern(msg));
         
-        msg = "{\"inList\":[{\"cmd\":\"enqueue\",\"name\":\"job4\",\"pri\":-1}]}";
+        msg = "{\"inList\":[{\"cmd\":\"enqueue\",\"name\":\"JOB4\",\"pri\":1}]}";
         System.out.println(msg);
         testingFunction(discerner.discern(msg));
         
