@@ -1,16 +1,25 @@
-package csi403;
+//*******************************************************************
+//  The supplied httpservlet class, to enact algorithms on supplied POST requests.
+// 
+//  Edits have only been made to the "main worker method" doService, which is called in doPost.
+//*******************************************************************
 
+package csi403;
 
 // Import required java libraries
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 // Extend HttpServlet class
-public class DiscernJsonService extends HttpServlet {
+public class HashCollisions extends HttpServlet {
 
-  // Standard servlet method 
+	private static final long serialVersionUID = 1L;
+
+	// Standard servlet method 
     public void init() throws ServletException { 
         // Do any required initialization here - likely none
     }
@@ -46,14 +55,39 @@ public class DiscernJsonService extends HttpServlet {
             jsonStr = br.readLine();
         }
         
-        // Create Json reader object and discern the class from the JSON message 
-        String className = new JsonClassDiscerner().discern(jsonStr); 
+        //Store discerned response from inputted JSON
+        String discerned = new JsonClassDiscerner().discern(jsonStr); 
         
         // Set response content type to be JSON
         response.setContentType("application/json");
         // Send back the name of the class as a JSON message
         PrintWriter out = response.getWriter();
-        out.println("{ \"class\" : " + "\"" + className + "\"" + "}"); 
+        
+        if (discerned.equals("inList")) {
+        	//Create and objectmapper and serializer needed for inputting inList, and outputting outList
+            ObjectMapper mapper = new ObjectMapper();
+            JsonSerializer serializer = new JsonSerializer();
+
+            //Read in the inList and then construct the outList
+            inList inList = mapper.readValue(jsonStr, inList.class);
+
+            //Construct
+            outList outList = new outList(inList);
+            
+            if (outList.getOutList() == null) {
+            	 out.println("{\"message\" : \"unknown error\"}");
+            	 return;
+            } else {
+                //Serialize the outList and output
+                out.println(serializer.serialize(outList));
+            }
+
+        } else {
+            // e.printStackTrace(); 
+            out.println("{\"message\" : \"" + discerned + "\"}");
+        }
+        
+        
     }
     
     

@@ -5,18 +5,17 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>DiscernJsonService</display-name>
+    <display-name>HashCollisions</display-name>
     <description>
-        A simple service to show parsing of JSON. 
+    	An HTTP service which accepts an array of strings and returns the sets of strings which collide in the hash table in the order they appeared in the input list.
     </description>
-
     <servlet>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <servlet-class>csi403.DiscernJsonService</servlet-class>
+        <servlet-name>HashCollisions</servlet-name>
+        <servlet-class>csi403.HashCollisions</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <url-pattern>/DiscernJsonService</url-pattern>
+        <servlet-name>HashCollisions</servlet-name>
+        <url-pattern>/HashCollisions</url-pattern>
     </servlet-mapping>
 
 </web-app>     
