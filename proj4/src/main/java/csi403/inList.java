@@ -92,6 +92,9 @@ public class inList {
 			this.x = x;
 			this.y = y;
 		}
+		public coordinate() {
+			//do nothing
+		}
 		
 		//Getters and setters
 		/**
@@ -117,6 +120,13 @@ public class inList {
 		 */
 		public void setY(int y) {
 			this.y = y;
+		}
+		
+		//ToString
+		@Override
+		public String toString()
+		{
+			return "x: " + this.x + " y: " + this.y;
 		}
 	}
 }

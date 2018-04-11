@@ -16,7 +16,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 // Extend HttpServlet class
 public class PointsInPolygon extends HttpServlet {
 
-  // Standard servlet method 
+	/**
+	 * default serialversionid
+	 */
+	private static final long serialVersionUID = 1L;
+
+	// Standard servlet method 
     public void init() throws ServletException { 
         // Do any required initialization here - likely none
     }

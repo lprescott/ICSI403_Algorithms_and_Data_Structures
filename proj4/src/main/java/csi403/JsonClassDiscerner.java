@@ -24,6 +24,7 @@ import csi403.inList.coordinate;
 import java.io.Serializable;
 import java.util.List; 
 
+@SuppressWarnings("unused")
 public class JsonClassDiscerner {
 
     public JsonClassDiscerner() {
@@ -36,12 +37,19 @@ public class JsonClassDiscerner {
         } else if (jsonStr.contains(".")) {
     		return "non-integer value(s)";
     	}
+    	
+    	//Check for whitespace characters
+    	for (char c : jsonStr.toCharArray()) {
+    	    if (Character.isWhitespace(c)) {
+    	       return "Malformed JSON";
+    	    }
+    	}
         
         ObjectMapper mapper = new ObjectMapper();
         //mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         try {
         	inList inList = mapper.readValue(jsonStr, inList.class); 
-        	
+        	        	
         	//JsonNode jsonNode = mapper.readTree(jsonStr);
         	
         	//Some error checking and sanitation now that we have the data
@@ -50,10 +58,10 @@ public class JsonClassDiscerner {
         	}
         	for (coordinate searcher : inList.getInList()) {
                 if (searcher.getX() > 18 || searcher.getX() < 0){
-                    return "in-valid x value detected";
+                    return "in-valid x value(s)";
                 } else if (searcher.getY() > 18 || searcher.getY() < 0){
-                    return "in-valid y value detected";
-                }
+                    return "in-valid y value(s)";
+                } 
         	}
         	
         	return "inList";
@@ -64,25 +72,21 @@ public class JsonClassDiscerner {
         }
     }
 
-    //	Example input: 
-    //  { “inList” : 
-    //      [  
-    //          { “x” : 2,  “y” : 1 }, 
-    //          { “x” : 2,  “y” : 4 }, 
-    //          { “x” : 8,  “y” : 4 }, 
-    //          { “x” : 11, ”y” : 1 }		
-    //      ] 
-    //  } 
+
     // test app 
     public static void main(String[] args) {
         String msg;
         JsonClassDiscerner discerner = new JsonClassDiscerner();
         
-        msg = "{\"inList\":[{\"x\":1,\"y\":3},{\"x\":1,\"y\":4}]}";  
+        msg = "{\"inList\":[{},{\"x\":0,\"y\":0},{\"x\":0,\"y\":0}]}";  
+        System.out.println(msg);
+        testingFunction(discerner.discern(msg));  
+        
+        msg = "{\"inList\":[{\"x\":0,\"y\":0},{	},{\"x\":0,\"y\":0}]}";  
         System.out.println(msg);
         testingFunction(discerner.discern(msg));  
 
-        msg = "{\"inList\":[{\"x\":1,\"y\":3},{\"x\":1,\"y\":4},{\"x\":5,\"y\":5}]}";  
+        msg = "{\"inList\":[{\"x\":1,\"y\":3},{\"x\":5,\"y\":5}]}";  
         System.out.println(msg);
         testingFunction(discerner.discern(msg));  
 
@@ -94,7 +98,11 @@ public class JsonClassDiscerner {
         System.out.println(msg);
         testingFunction(discerner.discern(msg));
 
-        msg = "{\"inList\":[{\"x\":1,\"y\":3},{\"x\":-1,\"y\":4},{\"x\":5,\"y\":19}]}";  
+        msg = "{\"inList\":[{\"x\":1,\"y\":3},{\"x\":1,\"y\":4},{\"x\":5,\"y\":19}]}";  
+        System.out.println(msg);
+        testingFunction(discerner.discern(msg));
+    
+        msg = "{\"inList\":[{\"x\":0,\"y\":0},{\"x\":0,\"y\":0.1},{\"x\":0,\"y\":0}]}";  
         System.out.println(msg);
         testingFunction(discerner.discern(msg));
     }
@@ -110,6 +118,6 @@ public class JsonClassDiscerner {
     	}
     	System.out.println("******************"
     			+ "***************************"
-    			+ "***************************");
+    			+ "***************************\n");
     }
 }
