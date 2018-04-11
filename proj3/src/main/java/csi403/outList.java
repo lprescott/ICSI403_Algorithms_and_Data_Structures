@@ -153,7 +153,6 @@ public class outList {
 	 * For testing puporses.
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		inList testInlist = new inList();
 		
         String msg = "{\"inList\":[\"Bob\",\"boj\",\"obb\",\"job\",\"BOB\",\"foo\"]}";  
@@ -166,7 +165,6 @@ public class outList {
         try {
         	testInlist = mapper.readValue(msg, inList.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
 		}		

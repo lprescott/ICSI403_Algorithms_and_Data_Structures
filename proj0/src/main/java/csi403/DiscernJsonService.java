@@ -10,7 +10,9 @@ import javax.servlet.http.*;
 // Extend HttpServlet class
 public class DiscernJsonService extends HttpServlet {
 
-  // Standard servlet method 
+    static final long serialVersionUID = 1;
+
+    // Standard servlet method 
     public void init() throws ServletException { 
         // Do any required initialization here - likely none
     }

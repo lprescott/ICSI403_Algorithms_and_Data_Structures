@@ -94,7 +94,7 @@ public class JsonClassDiscerner {
         msg = "{\"inList\":[]}";  
         System.out.println(msg);
         testingFunction(discerner.discern(msg)); 
-        
+    
     }
     
     /*

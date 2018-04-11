@@ -5,18 +5,18 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>DiscernJsonService</display-name>
+    <display-name>PointsInPolygon</display-name>
     <description>
-        A simple service to show parsing of JSON. 
+        A simple service to calculate the number of points inside a polygon. 
     </description>
 
     <servlet>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <servlet-class>csi403.DiscernJsonService</servlet-class>
+        <servlet-name>PointsInPolygon</servlet-name>
+        <servlet-class>csi403.PointsInPolygon</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DiscernJsonService</servlet-name>
-        <url-pattern>/DiscernJsonService</url-pattern>
+        <servlet-name>PointsInPolygon</servlet-name>
+        <url-pattern>/PointsInPolygon</url-pattern>
     </servlet-mapping>
 
 </web-app>     

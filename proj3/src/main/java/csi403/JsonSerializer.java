@@ -32,12 +32,6 @@ public class JsonSerializer {
         }
         return str;
     }
-
-
-    // test app 
-    public static void main(String[] args) {
-        //TODO: auto generated stub
-    }
     
 }
 
