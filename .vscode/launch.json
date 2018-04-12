@@ -1,0 +1,158 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonClassDiscerner<proj0>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonClassDiscerner",
+            "projectName": "proj0",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonSerializer<proj0>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonSerializer",
+            "projectName": "proj0",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonClassDiscerner<proj1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonClassDiscerner",
+            "projectName": "proj1",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonSerializer<proj1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonSerializer",
+            "projectName": "proj1",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-outList<proj1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.outList",
+            "projectName": "proj1",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonClassDiscerner<proj2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonClassDiscerner",
+            "projectName": "proj2",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonSerializer<proj2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonSerializer",
+            "projectName": "proj2",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-outList<proj2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.outList",
+            "projectName": "proj2",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonClassDiscerner<proj3>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonClassDiscerner",
+            "projectName": "proj3",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-outList<proj3>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.outList",
+            "projectName": "proj3",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonClassDiscerner<proj4>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonClassDiscerner",
+            "projectName": "proj4",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JsonSerializer<proj4>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.JsonSerializer",
+            "projectName": "proj4",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-outList<proj4>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csi403.outList",
+            "projectName": "proj4",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}

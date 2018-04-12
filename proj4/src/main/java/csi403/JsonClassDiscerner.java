@@ -31,18 +31,14 @@ public class JsonClassDiscerner {
     }
 
     public String discern(String jsonStr) {
+
+        jsonStr.replaceAll("\\s+","");
+
     	//Some error checking
     	if(jsonStr.contains("{}") || jsonStr.isEmpty()) {
-    		return "empty JSON";
+    		return "Malformed JSON";
         } else if (jsonStr.contains(".")) {
     		return "non-integer value(s)";
-    	}
-    	
-    	//Check for whitespace characters
-    	for (char c : jsonStr.toCharArray()) {
-    	    if (Character.isWhitespace(c)) {
-    	       return "Malformed JSON";
-    	    }
     	}
         
         ObjectMapper mapper = new ObjectMapper();
