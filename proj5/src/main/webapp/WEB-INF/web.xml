@@ -16,7 +16,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>FOAFs</servlet-name>
-        <url-pattern>/FOAFS</url-pattern>
+        <url-pattern>/FOAFs</url-pattern>
     </servlet-mapping>
 
 </web-app>     
