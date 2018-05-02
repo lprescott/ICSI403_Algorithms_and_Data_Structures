@@ -133,13 +133,14 @@ public class outList {
 		//This loops through all friends, their friendships, then their friendships
 		//	looking for possible friendships (people with one degree of separation, 
 		//	that are not on their friends list)
-		
-		//System.out.println();
 		for(int x = 0; x < friends.size(); x++) {
-			//System.out.println(friendsArray[x].getName());
+			
+			//System.out.println("\n" + friendsArray[x].getName());
 			for(int y = 0; y < friendsArray[x].getFriends().size(); y++) {
+				
 				//System.out.println("\t" + friendsArray[x].getFriends().get(y).getName());
 				for(int z = 0; z < friendsArray[x].getFriends().get(y).getFriends().size(); z++) {
+					
 					//System.out.println("\t\t" + friendsArray[x].getFriends().get(y).getFriends().get(z).getName());
 					//System.out.println("\t\t\t" + !friendsArray[x].getFriends().get(y).getFriends().get(z).equals(friendsArray[x]));
 					
