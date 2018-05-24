@@ -27,14 +27,12 @@ Problem:
 
 ## proj2 Priority Queue:
 Goal:
-	To simulate a task management system with a priority queue.
+1. To simulate a task management system with a priority queue.
 
 Problem: 
-	Provide a RESTful service which accepts as a POST of JSON a list of enqueue and dequeue statements onto an in-memory job queue.
-
-	Each job definition contains a name and a priority, with 0 being the best priority and positive integers representing lower priorities.
-
-	Return the JSON representing the state of the queue (the list of job names, in priority order), after all enqueue and dequeue statements have been processed.  
+1. Provide a RESTful service which accepts as a POST of JSON a list of enqueue and dequeue statements onto an in-memory job queue.
+2. Each job definition contains a name and a priority, with 0 being the best priority and positive integers representing lower priorities.
+3. Return the JSON representing the state of the queue (the list of job names, in priority order), after all enqueue and dequeue statements have been processed.  
 	
 	Example input:    	
 	{ “inList” : 
