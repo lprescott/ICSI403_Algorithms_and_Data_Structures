@@ -13,6 +13,7 @@ Problem:
 1. Provide a RESTful service which accepts a POST of an array of integers in JSON format and returns the numbers as a JSON object in sorted order.  
 2.  Any sort algorithm may be used, but you must supply the source code for the sorting algorithm.
 
+```
     Example input:     
     { 
         “inList”      :    [ 5, 35, 1, 272, 12, 0, -2, 12 ] 
@@ -24,6 +25,7 @@ Problem:
         “algorithm”   :    “quicksort”, 
         “timeMS”      :    52 
     } 
+```
 
 ## proj2 Priority Queue:
 Goal:
@@ -34,22 +36,23 @@ Problem:
 2. Each job definition contains a name and a priority, with 0 being the best priority and positive integers representing lower priorities.
 3. Return the JSON representing the state of the queue (the list of job names, in priority order), after all enqueue and dequeue statements have been processed.  
 	
-	Example input:    	
-	{ “inList” : 
-		[ 
-			{ “cmd” : “enqueue”, “name” : ”job1”, “pri” : 4 }, 
-		 	{ “cmd” : “enqueue”, “name” : ”job2”, “pri” : 3 },
-		  	{ “cmd” : “dequeue” },
-		  	{ “cmd” : “enqueue”, “name” : ”job3”, “pri” : 0 },
-		  	{ “cmd” : “enqueue”, “name” : ”job4”, “pri” : 1 },
-		  	{ “cmd” : “dequeue” }
-   	    ] 
+    ```
+    Example input:    	
+    { “inList” : 
+        [ 
+	    { “cmd” : “enqueue”, “name” : ”job1”, “pri” : 4 }, 
+	    { “cmd” : “enqueue”, “name” : ”job2”, “pri” : 3 },
+ 	    { “cmd” : “dequeue” },
+            { “cmd” : “enqueue”, “name” : ”job3”, “pri” : 0 },
+            { “cmd” : “enqueue”, “name” : ”job4”, “pri” : 1 },
+            { “cmd” : “dequeue” }
+   	] 
     } 
 	
     Example output: 	
-	{ “outList” : 
-		[ “job4”, “job1” ] 
-	} 
+    { “outList” : 
+        [ “job4”, “job1” ] 
+    } 
 
 ## proj3 HashCollisions:
 Goal:
