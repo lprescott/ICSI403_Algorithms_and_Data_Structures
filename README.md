@@ -1,4 +1,4 @@
-# I CSI 403 Algorithms and Data Structures (3)
+# ICSI403_Algorithms_and_Data_Structures (3)
 Description of common data structures such as lists, push-down stores, queues, trees, and graphs. Definition of algorithm efficiency and efficient algorithms for integer and polynomial arithmetic, sorting, set manipulation, shortest paths, pattern matching, and Fourier transforms.
 
 ## proj0:
